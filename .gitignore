@@ -34,3 +34,4 @@ build/
 
 application-local.properties
 /src/main/resources/http_client/http-client.private.env.json
+/aot/
