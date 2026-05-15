@@ -1,0 +1,39 @@
+###
+GET http://localhost:8080/dogs
+Authorization: Basic {{credentials}}
+X-API-VERSION: 1.0
+
+###
+GET http://localhost:8080/dogs
+Authorization: Basic {{credentials}}
+
+###
+GET http://localhost:8080/cats
+Authorization: Basic {{credentials}}
+Accept: application/json
+X-API-VERSION: 1.0
+
+###
+GET http://localhost:8080/cats
+Authorization: Basic {{credentials}}
+Accept: application/json
+
+
+###
+POST http://localhost:8080/users
+Authorization: Basic {{credentials}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "user-unknown",
+  "password": "unknown-pwd"
+}
+
+###
+GET http://localhost:8080/user?username=nibediata&password=pw
+Authorization: Basic {{credentials}}
+Accept: application/json
+Content-Type: application/json
+
+###
