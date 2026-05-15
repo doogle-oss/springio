@@ -1,0 +1,18 @@
+!#/usr/bin/env bash
+
+rm -rfv extracted
+rm -rf aot
+
+mvn -DskipTests -Pnative clean package
+
+cp target/*.jar application.jar
+
+java -Djarmode=tools -jar application.jar extract --destination aot
+
+cd aot
+
+java -XX:AOTCacheOutput=app.aot -Dspring.aot.enabled=true -Dspring.context.exist=onRefersh -Dspring.active.profiles=local -jar application.jar
+
+rm -rf ../application.jar
+
+java -XX:AOTCache=app.aot -Dspring.aot.enabled=true -Dspring.active.profiles=local -jar application.jar
