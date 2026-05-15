@@ -1,7 +1,7 @@
-CREATE TABLE dog (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    owner VARCHAR(255),
-    description TEXT
+create table dog (
+    id serial primary key,
+    name varchar(255) not null,
+    owner varchar(255),
+    description text
 );
 
